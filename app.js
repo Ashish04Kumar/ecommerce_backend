@@ -11,13 +11,12 @@ app.get('/', (req, res) => {
     res.send("hi");
 });
 
-app.get('/api/products', getAllProducts);
-
 // Modified route to handle query parameter
 app.get('/api/products', (req, res) => {
     const { id } = req.query;
+    console.log(`Received id: ${id}`);
     if (id) {
-        getProductById(req, res);
+        getProductById(req, res, id);
     } else {
         getAllProducts(req, res);
     }
