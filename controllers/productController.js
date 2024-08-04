@@ -6,8 +6,7 @@ const getAllProducts = (req, res) => {
 };
 
 
-const getProductById = (req, res) => {
-  const { id } = req.params;
+const getProductById = (req, res, id) => {
   console.log("GFbdvsc", id)
   const product = singleProduct.find(p => p.id === id);
 
